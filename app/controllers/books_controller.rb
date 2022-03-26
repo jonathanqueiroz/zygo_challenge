@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_book, only: %i[show edit update destroy]
   before_action :set_order, only: %i[index search]
+  before_action :valid_role, except: %i[index show search]
 
   def index
     @books = Book.order(title: @order_by)
@@ -58,6 +59,10 @@ class BooksController < ApplicationController
 
   def set_order
     @order_by = params[:order_by].blank? ? 'asc' : params[:order_by]
+  end
+
+  def valid_role
+    redirect_to books_url, notice: 'Você precisa ser bibliotecário para realizar essa ação.' if current_user.reader?
   end
 
   def book_params

@@ -1,9 +1,8 @@
 <% options = [['Ordernar por...', ''], ['A-Z', 'asc'], ['Z-A', 'desc']] %>
-<p id="notice"><%= notice %></p>
 
 <div class="container">
   <h1>Livros</h1>
-
+  <p id="notice"><%= notice %></p>
   <%= form_with id: 'search', url: search_books_path, method: 'get', local: false, class: 'align-items-center mb-3' do %>
     <div class="row">
       <div class="col-12 col-lg-5 mb-3">
