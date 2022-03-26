@@ -1,24 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-6 mb-3">
+      <%= label_tag :title, 'Título' %>
+      <%= text_field :book, :title, value: @book.title, class: 'form-control', readonly: true %>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
+    <div class="col-6 mb-3">
+      <%= label_tag :description, 'Descrição' %>
+      <%= text_field :book, :description, value: @book.description, class: 'form-control', readonly: true %>
+    </div>
 
-<p>
-  <strong>Cover url:</strong>
-  <%= @book.cover_url %>
-</p>
+    <div class="col-6 mb-3">
+      <%= label_tag :cover_url, 'Imagem da capa' %>
+      <%= text_field :book, :cover_url, value: @book.cover_url, class: 'form-control', readonly: true %>
+    </div>
 
-<p>
-  <strong>Author name:</strong>
-  <%= @book.author_name %>
-</p>
+    <div class="col-6 mb-3">
+      <%= label_tag :author_name, 'Nome do autor' %>
+      <%= text_field :book, :author_name, value: @book.author_name, class: 'form-control', readonly: true %>
+    </div>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+    <div class="actions">
+      <%= link_to 'Editar', edit_book_path(@book), class: 'btn btn-primary' %>
+      <%= link_to 'Voltar', books_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

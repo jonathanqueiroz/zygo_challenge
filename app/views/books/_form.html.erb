@@ -1,7 +1,7 @@
 <%= form_with(model: book) do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= pluralize(book.errors.count, "erro") %> impede que este livro seja salvo:</h2>
 
       <ul>
         <% book.errors.each do |error| %>
@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="row mb-3">
+    <div class="col-6 mb-3">
+      <%= form.text_field :title, placeholder: 'Título', class: 'form-control' %>
+    </div>
+
+    <div class="col-6  mb-3">
+      <%= form.text_field :description, placeholder: 'Descrição', class: 'form-control' %>
+    </div>
+
+    <div class="col-6 mb-3">
+      <%= form.text_field :cover_url, placeholder: 'Imagem de capa', class: 'form-control' %>
+    </div>
+
+    <div class="col-6 mb-3">
+      <%= form.text_field :author_name, placeholder: 'Nome do autor', class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Salvar', class: 'btn btn-primary' %>
+      <%= link_to 'Cancelar', books_path, class: 'btn btn-primary' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cover_url %>
-    <%= form.text_field :cover_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author_name %>
-    <%= form.text_field :author_name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

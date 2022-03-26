@@ -2,15 +2,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <h1>Books</h1>
+  <h1>Livros</h1>
 
-  <%= form_with id: 'search', url: search_books_path, method: 'get', local: false, class: 'align-items-center' do %>
+  <%= form_with id: 'search', url: search_books_path, method: 'get', local: false, class: 'align-items-center mb-3' do %>
     <div class="row">
-      <div class="col-5">
+      <div class="col-12 col-lg-5 mb-3">
         <%= text_field_tag :q, params[:q], placeholder: 'Busque por título descrição ou autor', class: 'form-control' %>
       </div>
 
-      <div class="col-3">
+      <div class="col-12 col-lg-3 mb-3">
         <%= select_tag 'order_by', options_for_select(options, selected: '', disabled: ''), class: 'form-select' %>
       </div>
       <div class="col-auto">
@@ -25,6 +25,7 @@
 
   <br>
 
-  <%= link_to 'New Book', new_book_path, class: 'btn btn-primary' %>
+  <%= link_to 'Novo Livro', new_book_path, class: 'btn btn-primary' %>
+  <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 </div>
 
