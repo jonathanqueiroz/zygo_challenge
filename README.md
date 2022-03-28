@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this project you will need to follow these steps writting on your terminal:
 
-Things you may want to cover:
+* git clone https://github.com/jonathanqueiroz/zygo_challenge.git
 
-* Ruby version
+* bundle install
 
-* System dependencies
+* rails db:setup
 
-* Configuration
+* rails s
 
-* Database creation
+## Gems used on this project
 
-* Database initialization
+* Devise (for authentication)
+* pundit (authorization policies)
+* rspec (testing framework)
+* factory_bot_rails (class objects generator)
+* faker (fake data generator)
 
-* How to run the test suite
+## Other things used on this project
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Sqlite 3
+* Bootstrap
+* Jquery
