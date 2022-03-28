@@ -23,7 +23,7 @@
     </div>
 
     <div class="actions">
-      <%= link_to 'Editar', edit_book_path(@book), class: 'btn btn-primary' %>
+      <%= link_to 'Editar', edit_book_path(@book), class: 'btn btn-primary' if policy(@book).edit? %>
       <%= link_to 'Voltar', books_path, class: 'btn btn-primary' %>
     </div>
   </div>

@@ -3,6 +3,7 @@
 <div class="container">
   <h1>Livros</h1>
   <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
   <%= form_with id: 'search', url: search_books_path, method: 'get', local: false, class: 'align-items-center mb-3' do %>
     <div class="row">
       <div class="col-12 col-lg-5 mb-3">
@@ -24,7 +25,7 @@
 
   <br>
 
-  <%= link_to 'Novo Livro', new_book_path, class: 'btn btn-primary' %>
+  <%= link_to 'Novo Livro', new_book_path, class: 'btn btn-primary' if policy(@books).new? %>
   <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 </div>
 
